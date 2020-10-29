@@ -7,19 +7,16 @@ Objective:
 Using fetch, async, and await, you’ll request information from the  [Foursquare API](https://developer.foursquare.com/)  and  [OpenWeather API](https://openweathermap.org/current)  to create a travel website.
 
 # Technologies
-JavaScript ES6, ES7, ES8 (Async functions)
-CSS
-OpenWeather API
-Foursquare API
+- JavaScript ES6, ES7, ES8 (Async functions)
+- CSS
+- OpenWeather API
+- Foursquare API
 
-## NB 
-### Saving and storing client ID obtained from the Foursquare API to const clientId.
-### Same for client secret from the Foursquare API to const clientSecret.
+NB (keys stored in gitignore) however stored client ID obtained from the Foursquare API to const clientId. Same for client secret from the Foursquare API to const clientSecret.
 
 - getVenues() into an asynchronous function that returns a Promise.
 - created a variable `city` to store the user’s input field on the page with `$input.val()`.
 - const called `urlToFetch`. This string will contain the combined text of the entire request URL:
-
 - the API endpoint URL
 - the user’s input city
 - a limit parameter with the number of venues you wish to return (use 10)
