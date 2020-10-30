@@ -8,6 +8,7 @@ Using fetch, async, and await, you’ll request information from the  [Foursquar
 
 # Technologies
 - JavaScript ES6, ES7, ES8 (Async functions)
+- JQuery
 - CSS
 - OpenWeather API
 - Foursquare API
@@ -74,4 +75,52 @@ if (response.ok) {
 ```
 
 # Render Data From Foursquare API
+
+renderVenues that calls the .forEach() method on the $venueDivs array. This is an array of the <div>s in index.html where you will render the information returned in the response from the Foursquare API.
+
+Start by creating a const venue to represent the individual venue object inside of the .forEach() callback. Save the current venue at venues[index] to this variable.
+
+Create a venueIcon const to save the value of the object representing the venue icon. This is accessible as the icon property of the first element in the array of categories of the venue object.
+
+```
+const renderVenues = (venues) => {
+  $venueDivs.forEach(($venue, index) => {
+    // Add your code here:
+const venue = venues[index];
+    const venueIcon = venue.categories[0].icon;
+    const venueImgSrc = `${venueIcon.prefix}bg_64${venueIcon.suffix}`;
+
+    let venueContent = createVenueHTML(venue.name, venue.location, venueImgSrc);
+    $venue.append(venueContent);
+  });
+  $destination.append(`<h2>${venues[0].location.city}</h2>`);
+}
+
+```
+
+constructed the full source URL for the venue icon. The venueIcon has a prefix and suffix field used to construct a source path. i constructed the HTML string to add the new venue using append() method. 
+
+# connecting renderVenues() function to the data fetched by getVenues().
+
+In the executeSearch() function towards the bottom of main.js, getVenues() and getForecast() are already being called.
+
+Chain a .then() method to getVenues(). .then()‘s callback function should take a single parameter, venues, and return renderVenues(venues)
+
+```
+const executeSearch = () => {
+  ...
+  getVenues().then(venues => renderVenues(venues))
+  ...
+}
+
+```
+
+# Helper functions for rendering
+
+createVenueHTML() has been provided to construct the HTML string to display the venue information. 
+
+*further challanges*
+Render more than 3 venues
+Include additional information about each venue from the response.
+For a real challenge, try fetching venue photos. This will require an additional request for venue details for each venue, as the photo information is not returned in the initial request.
 

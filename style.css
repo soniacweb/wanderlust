@@ -23,10 +23,13 @@ h1 {
 
 h3 {
   font-family: Work Sans;
+  text-align: center;
   font-weight: 500;
   line-height: 1.29;
   color: #27c19e;
-  padding-left: 5px
+  padding-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 p {
@@ -34,7 +37,7 @@ p {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.36;
-  text-align: left;
+  text-align: center;
   color: #4a4a4a;
   padding-left: 5px;
 }
@@ -50,9 +53,21 @@ footer {
   height: 50px;
 }
 
+h2 {
+  margin: 18px;
+  /* line-height: 20px;
+  text-align: center; */
+}
+
 .weather h2 {
   position: relative;
   padding: 5px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto 
 }
 
 .container {
@@ -84,18 +99,21 @@ footer {
 .venue {
   width: 275px;
   padding: 20px;
+  margin: 20px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 .venueimage {
-  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto 
 }
 
 #venues h2 {
   font-family: Work Sans;
   font-size: 22px;
   font-weight: 600;
-  line-height: 0.77;
+  line-height: 1;
   text-align: center;
   padding-top: 5px;
 }
@@ -110,7 +128,8 @@ footer {
 }
 
 .sectiontitle {
-  width: 300px;
+  display: flex;
+  /* width: 300px; */
   align-items: center;
 }
 
@@ -124,9 +143,17 @@ footer {
 }
 
 #venues {
-  display: flex;
+  /* display: flex; */
   justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
   min-height: 250px;
+}
+
+.venue {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
 }
 
 #weather {
@@ -181,7 +208,7 @@ footer {
 
   #venues, #weather {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
   }
   .venue, .weather {
@@ -200,5 +227,8 @@ footer {
   .sectiontitle, .sectiontitle h2, #destination {
     margin: auto;
     text-align: center;
+  }
+  h2 {
+    line-height: 10px;
   }
 }
