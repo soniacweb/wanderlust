@@ -58,7 +58,7 @@ const getPhotos = async(venueId) => {
       console.log(jsonResponse)
       // const photos = jsonResponse.response.venue.photos.groups[1].items[0].prefix + 'width960' + jsonResponse.response.venue.photos.groups[1].items[0].suffix
       const photos = `https://fastly.4sqi.net/img/general/200x200${jsonResponse.response.photos.items[0].suffix}`
-      console.log(photos)
+      // console.log(photos)
       return photos
     }
   } catch (err){
@@ -81,10 +81,11 @@ const getForecast = async () => {
 }
 //div elements
 const createVenueHTML = (name, location, iconSource, photos) => {
-  return `<h2>${name}</h2>
+  return `
+  <img src='${photos}' />
   <img class="venueimage" src="${iconSource}"/>
+  <h2>${name}</h2>
   <h3>Address:</h3>
-  <img src=${photos}/>
   <p>${location.address}</p>
   <p>${location.postalCode}</p>
   <p>${location.city}</p>
