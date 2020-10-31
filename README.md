@@ -1,10 +1,12 @@
-# wanderlust
+a# wanderlust
 
 Part of the Codeacademy frontend projects.
 
 Objective:
 
 Using fetch, async, and await, you’ll request information from the  [Foursquare API](https://developer.foursquare.com/)  and  [OpenWeather API](https://openweathermap.org/current)  to create a travel website.
+
+Wanderlust can be found <a href="https://soniacweb.github.io/wanderlust">here</a>
 
 # Technologies
 - JavaScript ES6, ES7, ES8 (Async functions)
@@ -76,9 +78,9 @@ if (response.ok) {
 
 # Render Data From Foursquare API
 
-renderVenues that calls the .forEach() method on the $venueDivs array. This is an array of the <div>s in index.html where you will render the information returned in the response from the Foursquare API.
+renderVenues that calls the .forEach() method on the $venueDivs array. This is an array of venue ids the in index.html where information will be rendered and returned in the response from the Foursquare API.
 
-Start by creating a const venue to represent the individual venue object inside of the .forEach() callback. Save the current venue at venues[index] to this variable.
+I started by creating a const venue to represent the individual venue object inside of the `.forEach()` callback - saving the current venue at venues[index] to this variable.
 
 Create a venueIcon const to save the value of the object representing the venue icon. This is accessible as the icon property of the first element in the array of categories of the venue object.
 
